@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const logger = require('../../../utils/logger');
+const { logger } = require('@micro-app/core');
 
 const defaultOpts = {
     test: null,

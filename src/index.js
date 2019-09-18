@@ -5,8 +5,8 @@ module.exports = function WebpackAdapter(api, opts) {
     const Config = require('webpack-chain');
     const _ = require('lodash');
     const ReplaceFileNotExistsPlugin = require('./ReplaceFileNotExistsPlugin');
-    const webpackMerge = require('../../utils/merge-webpack');
-    const CONSTANTS = require('../../config/constants');
+    const webpackMerge = require('./utils/merge-webpack');
+    const { CONSTANTS } = require('@micro-app/core');
 
     let initialized = false;
     let originalWebpackConfig = {};
@@ -86,6 +86,6 @@ module.exports = function WebpackAdapter(api, opts) {
         initialized = true;
 
         // 强制初始化一次, 兼容
-        api.resolveWebpackConfig();
+        // api.resolveWebpackConfig();
     });
 };

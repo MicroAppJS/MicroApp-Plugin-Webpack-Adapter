@@ -1,6 +1,6 @@
 {
     "name": "@micro-app/plugin-webpack-adapter",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "[Plugin] webpack adapter plugin.",
     "main": "src/index.js",
     "scripts": {
@@ -41,6 +41,10 @@
         "jest": "^24.9.0"
     },
     "dependencies": {
-        "lodash": "^4.17.15"
+        "lodash": "^4.17.15",
+        "webpack-chain": "^6.0.0"
+    },
+    "peerDependencies": {
+        "@micro-app/core": "^0.1.3"
     }
 }
