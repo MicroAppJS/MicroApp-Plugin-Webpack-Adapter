@@ -391,7 +391,26 @@
     update-notifier "^3.0.1"
     yargs-parser "^13.1.1"
 
-"@micro-app/core@0.1.1", "@micro-app/core@^0.1.1":
+"@micro-app/core@0.1.4":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@micro-app/core/-/core-0.1.3.tgz#0918ad6957751b95f13009ea45f4f1e702adba3c"
+  integrity sha512-Mt8xrZS3wUHO/PV5OlwwynFatP2vX8DZYy6tT9eIseib/y1ypSpx1Zo8Eb6UPJS3r7U2+HmekFNlQXT2Io4bjA==
+  dependencies:
+    ajv "^6.10.2"
+    ajv-keywords "^3.4.1"
+    assert "^2.0.0"
+    chalk "^2.4.2"
+    cheerio "^1.0.0-rc.3"
+    dotenv "^8.1.0"
+    lodash "^4.17.15"
+    module-alias "^2.2.1"
+    ora "^3.4.0"
+    semver "^6.3.0"
+    stream-to-string "^1.2.0"
+    try-require "^1.2.1"
+    webpack-merge "^4.2.2"
+
+"@micro-app/core@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@micro-app/core/-/core-0.1.1.tgz#49334e96e880b72f2ae97d733dae1d2da73f9d15"
   integrity sha512-QCb421N4fAYWd1VAMVxy4qnEjdsuFys2UqbUukqcvVcCD80/5hd5GlmX/N23HfbcraZCRj4DjNDoVEqJc2acrA==

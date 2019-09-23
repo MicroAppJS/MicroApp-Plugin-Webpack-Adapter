@@ -22,11 +22,12 @@ module.exports = function WebpackAdapter(api, opts) {
         webpackChainConfig.merge(_originalWebpackConfig);
 
         const selfConfig = api.self;
-        if (selfConfig.strict === false && process.env.NODE_ENV === 'development') {
+        const micros = api.micros;
+        if (api.strictMode === false && api.mode === 'development') {
             const options = Object.assign({
                 test: CONSTANTS.SCOPE_NAME ? new RegExp('^' + CONSTANTS.SCOPE_NAME + '/') : /^@micros\//i,
             }, (opts.ReplaceFileNotExists || {}), {
-                micros: selfConfig.micros,
+                micros,
                 selfName: selfConfig.name,
             });
             webpackChainConfig.plugin('replace-file-not-exists').use(ReplaceFileNotExistsPlugin, [ options ]);
@@ -75,7 +76,7 @@ module.exports = function WebpackAdapter(api, opts) {
         api.applyPluginHooks('beforeMergeWebpackConfig', webpackConfig);
 
         originalWebpackConfig = webpackMerge(webpackConfig, {
-            microsExtral: api.self.microsExtral || {},
+            microsExtralConfig: api.microsExtralConfig || {},
             micros: api.micros,
             config: api.selfConfig,
             microsConfig: api.microsConfig,
@@ -84,8 +85,9 @@ module.exports = function WebpackAdapter(api, opts) {
         api.applyPluginHooks('afterMergeWebpackConfig', originalWebpackConfig);
 
         initialized = true;
-
-        // 强制初始化一次, 兼容
-        // api.resolveWebpackConfig();
     });
+};
+
+module.exports.configuration = {
+    description: 'webpack 适配器, 对外提供多个触发事件',
 };

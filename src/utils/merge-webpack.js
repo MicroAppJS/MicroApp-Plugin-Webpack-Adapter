@@ -168,7 +168,7 @@ function webpackMerge(webpackConfig = {}, opts = {}) {
     }
 
     // extral config
-    const microsExtral = opts.microsExtral || {};
+    const microsExtralConfig = opts.microsExtralConfig || {};
 
     const microConfigs = [];
     names.forEach(key => {
@@ -178,7 +178,7 @@ function webpackMerge(webpackConfig = {}, opts = {}) {
             // inject
             injectWebpackAlias(wc, microConfig);
 
-            const extralConfig = microsExtral[key];
+            const extralConfig = microsExtralConfig[key];
             if (extralConfig) {
                 extralCustomConfig(wc, extralConfig);
             }
@@ -195,6 +195,7 @@ function webpackMerge(webpackConfig = {}, opts = {}) {
     return uniqArray(config);
 }
 
-webpackMerge.injectWebpackPlugins = injectWebpackPlugins;
-
 module.exports = webpackMerge;
+
+module.exports.injectWebpackPlugins = injectWebpackPlugins;
+
