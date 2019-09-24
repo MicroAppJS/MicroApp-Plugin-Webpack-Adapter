@@ -137,12 +137,17 @@ function injectWebpackAlias(webpackConfig, microConfig = {}) {
 }
 
 // 去重复
-function uniqArray(webpackConfig) {
+function uniqArray(webpackConfig, microConfig = {}) {
     if (!webpackConfig) {
         return null;
     }
     if (webpackConfig.resolve && webpackConfig.resolve.modules && Array.isArray(webpackConfig.resolve.modules)) {
-        webpackConfig.resolve.modules = [ ...new Set(webpackConfig.resolve.modules) ];
+        const resolveModules = [ ...new Set(webpackConfig.resolve.modules) ];
+        if (resolveModules.length > 0 && microConfig.nodeModules === resolveModules[resolveModules.length - 1]) {
+            // 将最后一个放在第一位
+            resolveModules.unshift(resolveModules.pop());
+        }
+        webpackConfig.resolve.modules = resolveModules;
     }
     if (webpackConfig.entry) {
         const entry = webpackConfig.entry;
@@ -167,7 +172,7 @@ function webpackMerge(webpackConfig = {}, opts = {}) {
         return merge.smart(webpackConfig, config);
     }
 
-    // extral config
+    // extra config
     const microsExtralConfig = opts.microsExtralConfig || {};
 
     const microConfigs = [];
@@ -192,7 +197,7 @@ function webpackMerge(webpackConfig = {}, opts = {}) {
     // inject self
     injectWebpackAlias(config, opts.config);
 
-    return uniqArray(config);
+    return uniqArray(config, opts.config);
 }
 
 module.exports = webpackMerge;

@@ -38,6 +38,8 @@ module.exports = function WebpackAdapter(api, opts) {
 
         api.setState('webpackChainConfig', finalWebpackChainConfig);
         return finalWebpackChainConfig;
+    }, {
+        description: 'resolve webpack-chain config.',
     });
 
     api.extendMethod('resolveWebpackConfig', () => {
@@ -46,6 +48,8 @@ module.exports = function WebpackAdapter(api, opts) {
 
         api.setState('webpackConfig', webpackConfig);
         return webpackConfig;
+    }, {
+        description: 'resolve webpack config.',
     });
 
     api.registerMethod('beforeMergeWebpackConfig', {
