@@ -11,7 +11,9 @@ module.exports = function WebpackAdapter(api, opts) {
     let initialized = false;
     let originalWebpackConfig = {};
 
-    api.extendMethod('resolveChainableWebpackConfig', () => {
+    api.extendMethod('resolveChainableWebpackConfig', {
+        description: 'resolve webpack-chain config.',
+    }, () => {
         if (!initialized) {
             api.logger.error('please call after "onInitWillDone" !');
             process.exit(1);
@@ -38,18 +40,16 @@ module.exports = function WebpackAdapter(api, opts) {
 
         api.setState('webpackChainConfig', finalWebpackChainConfig);
         return finalWebpackChainConfig;
-    }, {
-        description: 'resolve webpack-chain config.',
     });
 
-    api.extendMethod('resolveWebpackConfig', () => {
+    api.extendMethod('resolveWebpackConfig', {
+        description: 'resolve webpack config.',
+    }, () => {
         const finalWebpackChainConfig = api.resolveChainableWebpackConfig();
         const webpackConfig = api.applyPluginHooks('modifyWebpcakConfig', finalWebpackChainConfig.toConfig());
 
         api.setState('webpackConfig', webpackConfig);
         return webpackConfig;
-    }, {
-        description: 'resolve webpack config.',
     });
 
     api.registerMethod('beforeMergeWebpackConfig', {
