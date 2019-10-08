@@ -58,3 +58,40 @@ module.exports = {
     ],
 };
 ```
+
+### Build
+
+```sh
+npx micro-app build
+```
+
+or
+
+```sh
+npx micro-app-build
+```
+
+
+### 内置部分插件提供的 api 方法补充
+
+可通过如下命令进行动态查看
+
+```js
+npx micro-app show methods
+```
+
+以提供的方法如下, `System Build-in` 为内置方法
+
+```js
+╰─➤  npx micro-app show methods
+  Plugin Methods:
+     * beforeMergeWebpackConfig    ( 合并 webpack 配置之前事件 )
+     * afterMergeWebpackConfig     ( 合并 webpack 配置之后事件 )
+     * modifyChainWebpcakConfig    ( 合并之后提供 webpack-chain 进行再次修改事件 )
+     * onChainWebpcakConfig        ( 修改之后提供 webpack-chain 进行查看事件 )
+     * modifyWebpackConfig         ( 对服务启动前对 webpack config 进行修改, 需要返回所有参数 )
+     * onBuildSuccess              ( 构建成功时事件 )
+     * onBuildFail                 ( 构建失败时事件 )
+     * beforeBuild                 ( 开始构建前事件 )
+     * afterBuild                  ( 构建结束后事件 )
+```
