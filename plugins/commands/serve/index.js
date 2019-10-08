@@ -52,7 +52,7 @@ module.exports = function serveCommand(api, opts) {
         }
     });
 
-    api.onServerInitDone(({ args, app }) => {
+    api.onServerInitWillDone(({ args, app }) => {
         const isDev = api.mode === 'development';
         const config = api.serverConfig;
 

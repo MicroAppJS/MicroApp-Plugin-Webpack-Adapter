@@ -2,9 +2,11 @@
 
 module.exports = function WebpackAdapter(api, opts) {
 
-    // regiest plugins
-    const registerPlugins = require('../plugins/register');
-    registerPlugins(api);
+    api.assertVersion('>=0.2.0');
+
+    // init others plugins
+    const initPlugins = require('../plugins/init');
+    initPlugins(api, opts);
 
     const Config = require('webpack-chain');
     const _ = require('lodash');
