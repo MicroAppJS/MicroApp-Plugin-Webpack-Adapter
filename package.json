@@ -1,12 +1,17 @@
 {
     "name": "@micro-app/plugin-webpack-adapter",
-    "version": "0.0.5",
+    "version": "0.1.0-beta.1",
     "description": "[Plugin] webpack adapter plugin.",
     "main": "src/index.js",
+    "bin": {
+        "micro-app-build": "./bin/micro-app-build.js"
+    },
     "scripts": {
         "test": "jest"
     },
     "files": [
+        "bin",
+        "plugins",
         "src"
     ],
     "homepage": "https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter",
@@ -31,11 +36,12 @@
     },
     "license": "MIT",
     "peerDependencies": {
-        "@micro-app/core": ">=0.1.5"
+        "@micro-app/core": ">=0.1.8",
+        "@micro-app/cli": ">=0.2.0"
     },
     "devDependencies": {
-        "@micro-app/cli": "^0.1.5",
-        "@micro-app/core": "^0.1.5",
+        "@micro-app/cli": "^0.2.0-beta.1",
+        "@micro-app/core": "^0.1.8",
         "@types/jest": "^24.0.18",
         "babel-eslint": "^10.0.3",
         "coveralls": "^3.0.6",
@@ -44,6 +50,7 @@
         "jest": "^24.9.0"
     },
     "dependencies": {
+        "cli-highlight": "^2.1.1",
         "webpack-chain": "^6.0.0"
     }
 }

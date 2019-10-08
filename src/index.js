@@ -2,6 +2,10 @@
 
 module.exports = function WebpackAdapter(api, opts) {
 
+    // regiest plugins
+    const registerPlugins = require('../plugins/register');
+    registerPlugins(api);
+
     const Config = require('webpack-chain');
     const _ = require('lodash');
     const ReplaceFileNotExistsPlugin = require('./ReplaceFileNotExistsPlugin');
