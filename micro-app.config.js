@@ -7,7 +7,7 @@ module.exports = {
     type: '', // types 类型
     webpack: { // webpack 配置 (只有自己使用)
         // output: {
-        //     path: path.resolve(__dirname, 'public'),
+        //     path: require('path').resolve(__dirname, 'public'),
         //     publicPath: '/public/',
         // },
     },

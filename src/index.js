@@ -29,7 +29,7 @@ module.exports = function WebpackAdapter(api, opts) {
         const webpackChainConfig = new Config();
         webpackChainConfig.merge(_originalWebpackConfig);
 
-        const selfConfig = api.self;
+        const selfConfig = api.selfConfig;
         const micros = api.micros;
         if (api.strictMode === false && api.mode === 'development') {
             const options = Object.assign({
@@ -86,9 +86,9 @@ module.exports = function WebpackAdapter(api, opts) {
         api.applyPluginHooks('beforeMergeWebpackConfig', webpackConfig);
 
         originalWebpackConfig = webpackMerge(webpackConfig, {
-            microsExtralConfig: api.microsExtralConfig || {},
+            microsExtraConfig: api.microsExtraConfig || {},
             micros: api.micros,
-            config: api.selfConfig,
+            config: api.selfConfig || {},
             microsConfig: api.microsConfig,
         });
 

@@ -55,7 +55,7 @@ Examples:
         let res;
         let hasUnnamedRule;
         if (args.rule) {
-            res = config.module.rules.find(r => r.__ruleNames[0] === args.rule);
+            res = config.module && config.module.rules.find(r => r.__ruleNames[0] === args.rule);
         } else if (args.plugin) {
             res = Array.isArray(config.plugins)
                 ? config.plugins.find(p => p.__pluginName === args.plugin)
@@ -102,6 +102,8 @@ Examples:
         'micro-app inspect'
     )} without any arguments to inspect the full config and read these rules' config.`);
         }
+
+        return webpackConfig;
     }
     );
 };
