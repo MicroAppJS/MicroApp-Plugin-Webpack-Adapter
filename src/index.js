@@ -52,7 +52,7 @@ module.exports = function WebpackAdapter(api, opts) {
         description: 'resolve webpack config.',
     }, () => {
         const finalWebpackChainConfig = api.resolveChainableWebpackConfig();
-        const webpackConfig = api.applyPluginHooks('modifyWebpcakConfig', finalWebpackChainConfig.toConfig());
+        const webpackConfig = api.applyPluginHooks('modifyWebpackConfig', finalWebpackChainConfig.toConfig());
 
         api.setState('webpackConfig', webpackConfig);
         return webpackConfig;
@@ -74,7 +74,7 @@ module.exports = function WebpackAdapter(api, opts) {
         type: api.API_TYPE.EVENT,
         description: '修改之后提供 webpack-chain 进行查看事件',
     });
-    api.registerMethod('modifyWebpcakConfig', {
+    api.registerMethod('modifyWebpackConfig', {
         type: api.API_TYPE.MODIFY,
         description: '合并之后提供 webpack config 进行再次修改事件',
     });

@@ -89,7 +89,7 @@ npx micro-app show methods
      * afterMergeWebpackConfig     ( 合并 webpack 配置之后事件 )
      * modifyChainWebpcakConfig    ( 合并之后提供 webpack-chain 进行再次修改事件 )
      * onChainWebpcakConfig        ( 修改之后提供 webpack-chain 进行查看事件 )
-     * modifyWebpackConfig         ( 对服务启动前对 webpack config 进行修改, 需要返回所有参数 )
+     * modifyWebpackConfig         ( 合并之后提供 webpack config 进行再次修改事件 )
      * onBuildSuccess              ( 构建成功时事件 )
      * onBuildFail                 ( 构建失败时事件 )
      * beforeBuild                 ( 开始构建前事件 )

@@ -34,23 +34,9 @@ Examples:
 
         const { _: paths, verbose } = args;
 
-        let config = api.resolveWebpackConfig();
+        const webpackConfig = api.resolveWebpackConfig();
 
-        const { webpackConfig } = api.applyPluginHooks('modifyWebpackConfig', {
-            args,
-            webpackConfig: config,
-        });
-
-        if (
-            !_.isPlainObject(webpackConfig) || !webpackConfig
-        ) {
-            logger.error('[Plugin] modifyWebpackConfig must return { args, webpackConfig }');
-            return process.exit(1);
-        }
-
-        // 更新一次
-        api.setState('webpackConfig', webpackConfig);
-        config = _.cloneDeep(webpackConfig);
+        const config = _.cloneDeep(webpackConfig);
 
         let res;
         let hasUnnamedRule;

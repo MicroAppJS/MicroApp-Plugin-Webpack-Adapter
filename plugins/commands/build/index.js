@@ -35,23 +35,7 @@ Examples:
 
         api.applyPluginHooks('beforeBuild', { args });
 
-        let _webpackConfig = api.resolveWebpackConfig();
-
-        const { webpackConfig } = api.applyPluginHooks('modifyWebpackConfig', {
-            args,
-            webpackConfig: _webpackConfig,
-        });
-
-        if (
-            !_.isPlainObject(webpackConfig) || !webpackConfig
-        ) {
-            logger.error('[Plugin] modifyWebpackConfig must return { args, webpackConfig }');
-            return process.exit(1);
-        }
-
-        // 更新一次
-        api.setState('webpackConfig', webpackConfig);
-        _webpackConfig = _.cloneDeep(webpackConfig);
+        const webpackConfig = api.resolveWebpackConfig();
 
         const webpack = require('webpack');
 

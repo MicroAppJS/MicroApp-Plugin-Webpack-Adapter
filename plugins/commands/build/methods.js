@@ -2,11 +2,6 @@
 
 module.exports = api => {
 
-    api.registerMethod('modifyWebpackConfig', {
-        type: api.API_TYPE.MODIFY,
-        description: '对服务启动前对 webpack config 进行修改, 需要返回所有参数',
-    });
-
     api.registerMethod('onBuildSuccess', {
         type: api.API_TYPE.EVENT,
         description: '构建成功时事件',
