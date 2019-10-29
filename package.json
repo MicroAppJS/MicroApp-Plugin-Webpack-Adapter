@@ -1,6 +1,6 @@
 {
     "name": "@micro-app/plugin-webpack-adapter",
-    "version": "0.1.0-beta.4",
+    "version": "0.1.0",
     "description": "[Plugin] webpack adapter plugin.",
     "main": "src/index.js",
     "bin": {
@@ -49,9 +49,9 @@
         "@micro-app/core": ">=0.2.0"
     },
     "devDependencies": {
-        "@micro-app/cli": "^0.2.0-beta.4",
-        "@micro-app/core": "^0.2.0-beta.5",
-        "@types/jest": "^24.0.18",
+        "@micro-app/cli": "^0.2.0",
+        "@micro-app/core": "^0.2.0",
+        "@types/jest": "^24.0.19",
         "babel-eslint": "^10.0.3",
         "coveralls": "^3.0.7",
         "eslint": "^5.16.0",
