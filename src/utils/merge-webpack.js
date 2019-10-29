@@ -173,7 +173,7 @@ function webpackMerge(webpackConfig = {}, opts = {}) {
     }
 
     // extra config
-    const microsExtralConfig = opts.microsExtralConfig || {};
+    const microsExtraConfig = opts.microsExtraConfig || {};
 
     const microConfigs = [];
     names.forEach(key => {
@@ -183,7 +183,7 @@ function webpackMerge(webpackConfig = {}, opts = {}) {
             // inject
             injectWebpackAlias(wc, microConfig);
 
-            const extralConfig = microsExtralConfig[key];
+            const extralConfig = microsExtraConfig[key];
             if (extralConfig) {
                 extralCustomConfig(wc, extralConfig);
             }

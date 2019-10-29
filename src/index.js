@@ -2,9 +2,11 @@
 
 module.exports = function WebpackAdapter(api, opts) {
 
-    // regiest plugins
-    const registerPlugins = require('../plugins/register');
-    registerPlugins(api);
+    api.assertVersion('>=0.2.0');
+
+    // init others plugins
+    const initPlugins = require('../plugins/init');
+    initPlugins(api, opts);
 
     const Config = require('webpack-chain');
     const _ = require('lodash');
@@ -27,7 +29,7 @@ module.exports = function WebpackAdapter(api, opts) {
         const webpackChainConfig = new Config();
         webpackChainConfig.merge(_originalWebpackConfig);
 
-        const selfConfig = api.self;
+        const selfConfig = api.selfConfig;
         const micros = api.micros;
         if (api.strictMode === false && api.mode === 'development') {
             const options = Object.assign({
@@ -50,7 +52,7 @@ module.exports = function WebpackAdapter(api, opts) {
         description: 'resolve webpack config.',
     }, () => {
         const finalWebpackChainConfig = api.resolveChainableWebpackConfig();
-        const webpackConfig = api.applyPluginHooks('modifyWebpcakConfig', finalWebpackChainConfig.toConfig());
+        const webpackConfig = api.applyPluginHooks('modifyWebpackConfig', finalWebpackChainConfig.toConfig());
 
         api.setState('webpackConfig', webpackConfig);
         return webpackConfig;
@@ -72,7 +74,7 @@ module.exports = function WebpackAdapter(api, opts) {
         type: api.API_TYPE.EVENT,
         description: '修改之后提供 webpack-chain 进行查看事件',
     });
-    api.registerMethod('modifyWebpcakConfig', {
+    api.registerMethod('modifyWebpackConfig', {
         type: api.API_TYPE.MODIFY,
         description: '合并之后提供 webpack config 进行再次修改事件',
     });
@@ -84,9 +86,9 @@ module.exports = function WebpackAdapter(api, opts) {
         api.applyPluginHooks('beforeMergeWebpackConfig', webpackConfig);
 
         originalWebpackConfig = webpackMerge(webpackConfig, {
-            microsExtralConfig: api.microsExtralConfig || {},
+            microsExtraConfig: api.microsExtraConfig || {},
             micros: api.micros,
-            config: api.selfConfig,
+            config: api.selfConfig || {},
             microsConfig: api.microsConfig,
         });
 
