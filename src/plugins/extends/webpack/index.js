@@ -160,3 +160,7 @@ module.exports = function extendWebpack(api, opts) {
         return Object.assign({}, _config, _.cloneDeep(finalConfig));
     });
 };
+
+module.exports.configuration = {
+    description: 'webpack 适配增强 config 配置信息',
+};

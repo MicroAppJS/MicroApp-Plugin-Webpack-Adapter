@@ -1,10 +1,10 @@
 {
     "name": "@micro-app/plugin-webpack-adapter",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "[Plugin] webpack adapter plugin.",
     "main": "src/index.js",
     "bin": {
-        "micro-app-build": "./bin/micro-app-build.js"
+        "micro-app-build": "./bin/micro-app-build"
     },
     "scripts": {
         "lint": "eslint .",
@@ -13,7 +13,6 @@
     },
     "files": [
         "bin",
-        "plugins",
         "src"
     ],
     "homepage": "https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter",

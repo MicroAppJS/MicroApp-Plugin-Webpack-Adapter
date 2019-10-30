@@ -60,13 +60,10 @@ module.exports = {
         },
     },
 
-    // plugins: [
-    //     [{
-    //         id: 'test',
-    //         description: '这是test',
-    //         link: __dirname + '/test/testPlugin',
-    //     }, {
-    //         a: 1,
-    //     }],
-    // ],
+    plugins: [
+        {
+            id: 'test',
+            link: __dirname + '/src/index.js',
+        },
+    ],
 };

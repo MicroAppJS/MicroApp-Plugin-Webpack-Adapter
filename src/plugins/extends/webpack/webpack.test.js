@@ -5,7 +5,7 @@
 describe('server', () => {
 
     it('server adapter', () => {
-        const { service } = require('../../../bin/base');
+        const { service } = require('@micro-app/cli');
 
         const plugin = service.plugins.find(item => item.id === 'cli:plugins-extends-server');
         expect(typeof plugin).toEqual('object');

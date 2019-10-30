@@ -2,8 +2,6 @@
 
 /* global expect */
 
-const path = require('path');
-
 describe('Command build', () => {
 
     let PORTS = 10000;
@@ -14,11 +12,7 @@ describe('Command build', () => {
 
     it('build run', async () => {
 
-        const { service } = require('@micro-app/cli/bin/base');
-        service.registerPlugin({
-            id: 'test:build',
-            link: path.join(__dirname, '../../../src/index.js'),
-        });
+        const { service } = require('@micro-app/cli');
 
         await service.run('build', getArgvs());
 
@@ -30,11 +24,7 @@ describe('Command build', () => {
 
     it('global cmd config', async () => {
 
-        const { service } = require('@micro-app/cli/bin/base');
-        service.registerPlugin({
-            id: 'test:build',
-            link: path.join(__dirname, '../../../src/index.js'),
-        });
+        const { service } = require('@micro-app/cli');
 
         const result = await service.run('build', Object.assign({
             openSoftLink: true,

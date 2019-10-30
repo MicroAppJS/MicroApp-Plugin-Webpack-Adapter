@@ -8,12 +8,7 @@ describe('Command version', () => {
 
     it('version', () => {
 
-        const { service } = require('@micro-app/cli/bin/base');
-
-        service.registerPlugin({
-            id: 'test:Version',
-            link: path.join(__dirname, './index.js'),
-        });
+        const { service } = require('@micro-app/cli');
 
         const plugin = service.plugins.find(item => item.id === 'cli:plugins-commands-version');
         expect(typeof plugin).toEqual('object');
