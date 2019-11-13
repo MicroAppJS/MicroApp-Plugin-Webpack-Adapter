@@ -15,13 +15,13 @@
         "bin",
         "src"
     ],
-    "homepage": "https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter",
+    "homepage": "https://github.com/MicroAppJS/MicroApp-Plugin-Webpack-Adapter",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter.git"
+        "url": "git+https://github.com/MicroAppJS/MicroApp-Plugin-Webpack-Adapter.git"
     },
     "bugs": {
-        "url": "https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter/issues"
+        "url": "https://github.com/MicroAppJS/MicroApp-Plugin-Webpack-Adapter/issues"
     },
     "keywords": [
         "micro",

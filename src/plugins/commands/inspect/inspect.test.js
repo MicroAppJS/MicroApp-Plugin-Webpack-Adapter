@@ -4,52 +4,52 @@
 
 describe('Plugin micro-app:inspect', () => {
 
-    it('inspect', () => {
+    it('inspect', async () => {
         const { service } = require('@micro-app/cli');
 
-        service.run('inspect', { _: [] });
+        await service.run('inspect', { _: [] });
     });
 
-    it('inspect-plugin', () => {
+    it('inspect-plugin', async () => {
         const { service } = require('@micro-app/cli');
 
-        service.run('inspect', { _: [], plugin: true });
+        await service.run('inspect', { _: [], plugin: true });
     });
 
-    it('inspect-plugins', () => {
+    it('inspect-plugins', async () => {
         const { service } = require('@micro-app/cli');
 
-        service.run('inspect', { _: [], plugins: true });
+        await service.run('inspect', { _: [], plugins: true });
     });
 
-    it('inspect-rule', () => {
+    it('inspect-rule', async () => {
         const { service } = require('@micro-app/cli');
 
-        service.run('inspect', { _: [], rule: true });
+        await service.run('inspect', { _: [], rule: true });
     });
 
-    it('inspect-rules', () => {
+    it('inspect-rules', async () => {
         const { service } = require('@micro-app/cli');
 
-        service.run('inspect', { _: [], rules: true });
+        await service.run('inspect', { _: [], rules: true });
     });
 
-    it('inspect-verbose', () => {
+    it('inspect-verbose', async () => {
         const { service } = require('@micro-app/cli');
 
-        service.run('inspect', { _: [], verbose: true });
+        await service.run('inspect', { _: [], verbose: true });
     });
 
-    it('inspect-path', () => {
+    it('inspect-path', async () => {
         const { service } = require('@micro-app/cli');
 
-        service.run('inspect', { _: [ 'entry.main', 'resolve.alias' ], verbose: true });
+        await service.run('inspect', { _: [ 'entry.main', 'resolve.alias' ], verbose: true });
     });
 
-    it('inspect-return webpack config', () => {
+    it('inspect-return webpack config', async () => {
         const { service } = require('@micro-app/cli');
 
-        const config = service.run('inspect');
+        const config = await service.run('inspect');
         expect(config).not.toBeUndefined();
         expect(config).not.toBeNull();
     });
