@@ -37,7 +37,7 @@ class ReplaceFileNotExistsPlugin {
         const request = result.request;
         if (!request.startsWith(this._selfName) && resourceRegExp.test(request)) {
             const prefix = this.micros.find(key => request.startsWith(key));
-            if (!prefix) {
+            if (prefix) {
                 if (this.debug) {
                     logger.debug('[ReplaceFileNotExistsPlugin][request] ' + request);
                 }
