@@ -36,8 +36,8 @@ class ReplaceFileNotExistsPlugin {
         if (!resourceRegExp) { return typeof callback === 'function' ? callback(null, result) : result; }
         const request = result.request;
         if (!request.startsWith(this._selfName) && resourceRegExp.test(request)) {
-            const prefix = this.micros.find(key => request.startsWith(key));
-            if (prefix) {
+            const prefix = request.replace(resourceRegExp, '');
+            if (prefix && !this.micros.some(key => prefix.startsWith(key.replace(resourceRegExp, '').replace(/^@/, '')))) {
                 if (this.debug) {
                     logger.debug('[ReplaceFileNotExistsPlugin][request] ' + request);
                 }
