@@ -86,3 +86,7 @@ Examples:
         });
     }
 };
+
+module.exports.configuration = {
+    description: 'webpack build command',
+};

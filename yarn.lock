@@ -379,20 +379,20 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@micro-app/cli@^0.2.0-beta.4":
-  version "0.2.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@micro-app/cli/-/cli-0.2.0-beta.4.tgz#ed8bbb3a79b57ef4cca16f0f50fcad93dbf288ef"
-  integrity sha512-h7SZj81iwVLsFtC/WPUWMz8b2avGiU3nobxYjFXis5CPDqSplWchdvvGFGpEQwFwIsGRN1Iinm5yqrrAlKYy+w==
+"@micro-app/cli@^0.2.0-beta.6":
+  version "0.2.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@micro-app/cli/-/cli-0.2.0-beta.6.tgz#f7b1c7807e674da073b08984cecdc929d3abc6ca"
+  integrity sha512-OlZ2v2ERZvo1C7SWs72ph5jffSWyFnQJ6Uv77VrJrkJgLgdEyDfTJoT0SOCjLQe0fC/G3KS0/zCvMPsz1V7moA==
   dependencies:
     koa "^2.10.0"
     shelljs "^0.8.3"
     update-notifier "^3.0.1"
     yargs-parser "^13.1.1"
 
-"@micro-app/core@^0.2.0-beta.5":
-  version "0.2.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@micro-app/core/-/core-0.2.0-beta.5.tgz#6763b09b4403bb9db6ae8f4c63a2b32d23ae3536"
-  integrity sha512-p7c0C4BOHD6askAlqOdyPiNNzmIWW0A8a2zsV5aXlz89QuFZTL433/B5LLSndHiAvCC1ryMi25caJA7OSbPq5g==
+"@micro-app/core@^0.2.0-beta.9":
+  version "0.2.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@micro-app/core/-/core-0.2.0-beta.9.tgz#9f3b91eef673a10bf992871629a500997c76fd62"
+  integrity sha512-X/ck5W42nL4lkRzv/52XYFU47YODfzN5Jnk3DgbRWuhjNLl36lP383tuGYnMhJNIjpk2k+5mKMyjys3mCKuM4w==
   dependencies:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"

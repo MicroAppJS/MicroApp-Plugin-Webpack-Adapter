@@ -1,10 +1,10 @@
 {
     "name": "@micro-app/plugin-webpack-adapter",
-    "version": "0.1.0-beta.4",
+    "version": "0.1.1",
     "description": "[Plugin] webpack adapter plugin.",
     "main": "src/index.js",
     "bin": {
-        "micro-app-build": "./bin/micro-app-build.js"
+        "micro-app-build": "./bin/micro-app-build"
     },
     "scripts": {
         "lint": "eslint .",
@@ -13,16 +13,15 @@
     },
     "files": [
         "bin",
-        "plugins",
         "src"
     ],
-    "homepage": "https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter",
+    "homepage": "https://github.com/MicroAppJS/MicroApp-Plugin-Webpack-Adapter",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter.git"
+        "url": "git+https://github.com/MicroAppJS/MicroApp-Plugin-Webpack-Adapter.git"
     },
     "bugs": {
-        "url": "https://github.com/MicrosApp/MicroApp-Plugin-Webpack-Adapter/issues"
+        "url": "https://github.com/MicroAppJS/MicroApp-Plugin-Webpack-Adapter/issues"
     },
     "keywords": [
         "micro",
@@ -49,9 +48,9 @@
         "@micro-app/core": ">=0.2.0"
     },
     "devDependencies": {
-        "@micro-app/cli": "^0.2.0-beta.4",
-        "@micro-app/core": "^0.2.0-beta.5",
-        "@types/jest": "^24.0.18",
+        "@micro-app/cli": "^0.2.0",
+        "@micro-app/core": "^0.2.0",
+        "@types/jest": "^24.0.19",
         "babel-eslint": "^10.0.3",
         "coveralls": "^3.0.7",
         "eslint": "^5.16.0",

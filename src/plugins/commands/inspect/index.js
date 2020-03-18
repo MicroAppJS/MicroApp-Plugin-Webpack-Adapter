@@ -93,3 +93,7 @@ Examples:
     }
     );
 };
+
+module.exports.configuration = {
+    description: 'inspect webpack config command',
+};

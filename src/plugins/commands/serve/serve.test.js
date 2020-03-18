@@ -12,9 +12,9 @@ describe('Command serve', () => {
 
     it('init run', async () => {
 
-        const { service } = require('@micro-app/cli/bin/base');
+        const { service } = require('@micro-app/cli');
 
-        const plugin = service.plugins.find(item => item.id === 'cli:plugins-commands-serve');
+        const plugin = service.plugins.find(item => item.id === 'cli:plugin-command-serve');
         expect(typeof plugin).toEqual('object');
 
         service.init();
@@ -31,9 +31,9 @@ describe('Command serve', () => {
 
     it('register methods', async () => {
 
-        const { service } = require('@micro-app/cli/bin/base');
+        const { service } = require('@micro-app/cli');
 
-        const plugin = service.plugins.find(item => item.id === 'cli:plugins-commands-serve');
+        const plugin = service.plugins.find(item => item.id === 'cli:plugin-command-serve');
         expect(typeof plugin).toEqual('object');
 
         service.init();
@@ -109,9 +109,9 @@ describe('Command serve', () => {
 
     it('register dev methods', async () => {
 
-        const { service } = require('@micro-app/cli/bin/base');
+        const { service } = require('@micro-app/cli');
 
-        const plugin = service.plugins.find(item => item.id === 'cli:plugins-commands-serve');
+        const plugin = service.plugins.find(item => item.id === 'cli:plugin-command-serve');
         expect(typeof plugin).toEqual('object');
 
         service.init();
@@ -138,7 +138,7 @@ describe('Command serve', () => {
 
     it('global cmd config', async () => {
 
-        const { service } = require('@micro-app/cli/bin/base');
+        const { service } = require('@micro-app/cli');
 
         await service.run('serve', Object.assign({
             openSoftLink: true,

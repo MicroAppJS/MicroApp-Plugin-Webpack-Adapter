@@ -18,6 +18,7 @@ function createProxy(hint, flag) {
 }
 
 const nil = ' ';
-const noop = createProxy(`<<##HINT##>>${nil}`);
+const hintText = `<<##HINT##>>${nil}`;
+const noop = createProxy(hintText);
 
 module.exports = noop;
